@@ -45,5 +45,21 @@ h1{
 }
 
 .grid-item{
-    border: #f07167 2px solid;
+    border: #b3b3b3 0.25px solid;
+}
+
+.settings-container{
+    display:flex;
+    justify-content: center;
+    padding:30px;
+}
+
+.grid-size{
+    border:none;
+    width:80px;
+    height:30px;
+    background-color: #0081a7;
+    color: white;
+    font-size: 15px;
+    border-radius: 20px;
 }

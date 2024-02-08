@@ -1,6 +1,9 @@
 gridContainer = document.querySelector('.grid-container');
-let a=15;
+sizeButton = document.querySelector('.grid-size')
+let a=8;
 
+function gridCreator(a){
+    gridContainer.innerHTML="";
 for (let i=1;i<=a*a;i++){
     const gridItem = document.createElement('div');
     gridItem.setAttribute('class','grid-item');   
@@ -10,5 +13,20 @@ for (let i=1;i<=a*a;i++){
     gridItem.addEventListener('mouseover',()=>{
     gridItem.style.backgroundColor='#dd2222';
 })
-}
+}}
 
+gridCreator(a);
+
+sizeButton.addEventListener('click',()=>{
+    let j=1;
+    a = prompt("Ingresa el tamaño de la cuadricula");
+    while (j < 2){    
+        if(a>=1&&a<=32){
+            gridCreator(a);
+            j++;
+        }
+        else{
+            a = prompt("Por favor, ingrese un número entre 1 y 32");
+        }
+    }
+})
