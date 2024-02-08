@@ -51,7 +51,9 @@ h1{
 .settings-container{
     display:flex;
     justify-content: center;
+    align-items: center;
     padding:30px;
+    gap:25px;
 }
 
 .grid-size{
@@ -62,4 +64,14 @@ h1{
     color: white;
     font-size: 15px;
     border-radius: 20px;
+    margin:0 10px;
+}
+
+.grid-color{
+    border:none;
+    padding:5px;
+    background-color: #0081a7;
+    border-radius:20px;
+    height:30px;
+    margin:0 10px;
 }

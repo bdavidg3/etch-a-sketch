@@ -1,5 +1,7 @@
 gridContainer = document.querySelector('.grid-container');
-sizeButton = document.querySelector('.grid-size')
+sizeButton = document.querySelector('.grid-size');
+colorInput = document.querySelector('.grid-color');
+let colorSelect = colorInput.value;
 let a=8;
 
 function gridCreator(a){
@@ -11,7 +13,8 @@ for (let i=1;i<=a*a;i++){
     gridItem.style.width=`calc(100% / ${a})`;
     gridItem.style.heigth=`calc(100% / ${a})`;
     gridItem.addEventListener('mouseover',()=>{
-    gridItem.style.backgroundColor='#dd2222';
+    let colorSelect = colorInput.value;
+    gridItem.style.backgroundColor=colorSelect;
 })
 }}
 
@@ -30,3 +33,4 @@ sizeButton.addEventListener('click',()=>{
         }
     }
 })
+
