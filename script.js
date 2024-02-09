@@ -1,8 +1,28 @@
 gridContainer = document.querySelector('.grid-container');
 sizeButton = document.querySelector('.grid-size');
 colorInput = document.querySelector('.grid-color');
-let colorSelect = colorInput.value;
+rainbowButton = document.querySelector('.rainbow')
 let a=8;
+let rainbowMode = false;
+
+function randomColor(){
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return `rgb(${r},${g},${b})`;
+}
+
+rainbowButton.addEventListener('click', function() {
+    if (rainbowMode) {
+        rainbowMode = false;
+        rainbowButton.classList.remove('active');
+        rainbowButton.setAttribute('class','rainbow')
+    } else {
+        rainbowMode = true;
+        rainbowButton.classList.add('active');
+        rainbowButton.setAttribute('class','active')
+    }
+});
 
 function gridCreator(a){
     gridContainer.innerHTML="";
@@ -13,7 +33,13 @@ for (let i=1;i<=a*a;i++){
     gridItem.style.width=`calc(100% / ${a})`;
     gridItem.style.heigth=`calc(100% / ${a})`;
     gridItem.addEventListener('mouseover',()=>{
-    let colorSelect = colorInput.value;
+        let colorSelect = '';
+    if(rainbowMode == false){
+        colorSelect = colorInput.value;
+    }
+    else{
+        colorSelect = randomColor();
+    }
     gridItem.style.backgroundColor=colorSelect;
 })
 }}
@@ -33,4 +59,3 @@ sizeButton.addEventListener('click',()=>{
         }
     }
 })
-
